@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(204, 204, 204);
+}
+
+main {
+    max-width: 60%;
+    margin-inline: auto;
+}
+
+.container {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    flex: 50%;
+    padding: 0 10px;
+}
+
+img.center {
+    max-width:200px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+}

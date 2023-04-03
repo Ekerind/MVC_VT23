@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+{% block body %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.backgroundColor = '{{ selected_color }}';
+            document.querySelector('.rotate').style.transform = 'rotate({{ position }}deg)';
+        });
+    </script>
+    <h1>Lucky</h1>
+    <div>
+        <img class="center rotate" src="{{ asset('img/moogle.png') }}" alt="A picture of a moogle">
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/moogle.png') }}">        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        {% import 'macro.twig' as active %}
+    </head>
+    <body>
+        <header>
+        </header>
+        <nav class="navbar">
+            <ul class="nav-list">
+            {{ active.nav_item('Hem', 'home') }}
+            {{ active.nav_item('Om', 'about') }}
+            {{ active.nav_item('Rapport', 'report') }}
+            {{ active.nav_item('Lucky', 'lucky') }}
+            {{ active.nav_item('Citat', 'quote') }}
+            </ul>
+        </nav>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            {% block footer %}&#169;2023 Mattias Ekerind{% endblock %}
+        </footer>
+    </body>
+</html>
