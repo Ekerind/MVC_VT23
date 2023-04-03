@@ -7,7 +7,41 @@
     <br>
     <section id="kmom01">
         <h2>Kmom01</h2>
-        <p></p>
+        <p>
+            Jag fick introduktion till objektorienterad programmering i och med kursen i Python tidigare i vår. Det känns som ett väldigt naturligt sätt att jobb.
+            Att kunna bunta ihop funktioner likt moduler gör att koden får en bra struktur. Att det sen leder till att objekten som skapas får egna variabler och 
+            inbyggda funktioner gör koden renare och mer tydlig i vad den ska utföra. Det gör också att vissa saker som variabler och uträkningar kan hållas bakom
+            kulisserna och bara valda resultat exporteras. Klasser är själva ritningen som används för att skapa objekt. De innehåller variabler och funktioner som
+            sen följer med objektet som skapas. På så sätt kan man enkelt skapa flera liknande objekt men som till viss del skiljer sig i och med att de har olika
+            variabler. Antingen kan objektetes variabler uppdateras direkt genom att tilldela objektet värden, eller via egenskapade funktioner som uppdaterar den
+            önskade variabeln.
+        </p>
+        <p>
+            Det tar alltid lite tid att bekanta sig med strukturen när man använder sig av ett nytt ramverk. Det går åt lite extra tid till att navigera mellan de
+            olika mapparna. Jag tycker jag har fått rätt bra koll på hur jag ska använda mig av det nu. Jag valde att aktivera SCSS inför framtida kursmoment och 
+            delade upp scss-filerna för att få bättre överblick. Jag hittade i dokumentationen att det gick att skapa ett macro för twig-filer så jag gjorde det
+            för de olika länkarna i menyn. Den främsta anledningen var för att hålla koden ren och lättläst. Det blev snabbt rörigt när jag skulle lägga till kod
+            för att markera den aktiva sidan. När det kom till sidan /lucky så valde jag att uppdatera sidans backgrundsfärg samt rotera bilden när sidan laddas.
+            Färgen slumpas fram från en array med färger och rotationen bestäms från ett slumpmässigt värde som multipliceras med 45 (grader). Jag vet inte om det
+            är tillräckligt stylat men det gav mig en bra inblick i hur jag skulle använda mig av script i twig-filen och läsa in data från objektet som skapas.
+        </p>
+
+        <p>
+            Dokumentationen "PHP The Right Way" innehöll mycket information och det var lite svårt att veta vilken nivå jag skulle lägga mig på.
+            Dels var delen om "Language Highlights" intressant som startpunkt. Namespaces är ingenting som jag har aktivt jobbat med tidigare. Inte
+            som jag har reflekterat över i alla fall. Men det känns som ett bra verktyg för att kunna strukturera upp koden. Det fungerar i princip som
+            en virtuell mappstruktur. Det som är bra med att jobba på det sättet är att man undviker att globala variabler med samma namn krockar.
+        </p>
+        <p>
+            En annan del som var intressant vad kapitlet om felhantering. PHP är ett förlåtande språk som försöker lösa mindre fel i koden. Texten tar upp
+            en jämförelse med Python som fungerar på motsatt sätt och korrigerar ingenting. Det finns tre grader av fel i PHP: 'warning', 'notice' och 'error'.
+            Av dem är det bara ett 'error' som avbryter koden. Senare i texten tas det upp hur 'errors' kastas som 'exceptions' när man använder sig av Symfony,
+            som vi gör. 
+        </p>
+        <p>
+            I det här kursmomentet har jag lärt mig grunderna i användandet av ramverket Symfony. Hur man skapar ett skelett till en hemsidag och sen kopplar routes
+            till twig-filer med hjälp av php-klasser.
+        </p>
     </section>
     <section id="kmom02">
         <h2>Kmom02</h2>
