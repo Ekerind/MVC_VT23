@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Sorterad kortlek{% endblock %}
+
+{% block body %}
+<h1>Sorterad kortlek</h1>
+
+<p>Det finns {{ count }}st kort i kortleken.</p>
+
+<div class="suits">
+    {% for suit in deck %}
+        <div class="row">
+            {% for card in suit %}
+                <p class="graphics_small sorted">{{ card|raw }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+<div>
+    <p>
+        <a href="{{ path('card_index') }}">Tillbaka</a>
+    </p>
+</div>
+
+{% endblock %}
