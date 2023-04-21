@@ -8,11 +8,15 @@
 <p>.</p>
 
 <p>
-    <a href="{{ path('quote') }}">Citat</a> |
-    <a href="{{ path('json_deck') }}">Sorterad kortlek</a> |
-    <a href="{{ path('json_shuffle') }}">Blanda kortlek</a> |
-    <a href="{{ path('json_draw_single') }}">Dra ett kort</a> |
-    <a href="{{ path('draw_json_get') }}">Dra flera kort</a>
+    {% if app.session.get('deck') is empty %}
+        <a href="{{ path('init') }}">Starta kortspel</a>
+    {% else %}
+        <a href="{{ path('json_deck') }}">Sorterad kortlek</a> |
+        <a href="{{ path('json_shuffle') }}">Blanda kortlek</a> |
+        <a href="{{ path('json_draw_single') }}">Dra ett kort</a> |
+        <a href="{{ path('draw_json_get') }}">Dra flera kort</a> |
+    {% endif %}
+    <a href="{{ path('quote') }}">Citat</a>
 </p>
 
 {% endblock %}

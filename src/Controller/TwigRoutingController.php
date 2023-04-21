@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class TwigRoutingController extends AbstractController
 {
@@ -30,5 +31,14 @@ class TwigRoutingController extends AbstractController
     public function jsonIndex(): Response
     {
         return $this->render('json.html.twig');
+    }
+
+    #[Route("/reset", name: "clear_session")]
+    public function clearSession(
+        SessionInterface $session
+    ): Response
+    {
+        $session->clear();
+        return $this->render('home.html.twig');
     }
 }
