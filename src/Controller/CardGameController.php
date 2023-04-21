@@ -8,8 +8,8 @@ use App\Cards\Deck;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CardGameController extends AbstractController
 {
@@ -17,8 +17,7 @@ class CardGameController extends AbstractController
     public function init(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new Deck();
         $deck->reset();
         $session->set("deck", $deck);
@@ -35,8 +34,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck", name: "deck")]
     public function showDeck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $data = [
             "deck" => $deck->groupBySuit(),
@@ -48,8 +46,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/shuffle", name: "shuffle")]
     public function shuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new Deck();
         $deck->reset();
         $deck->shuffle();
@@ -64,8 +61,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw", name: "draw_single")]
     public function drawSingle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $data = [
             "draw" => $deck->draw(),
@@ -78,8 +74,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw-many", name: "draw_get", methods: ['GET'])]
     public function drawInit(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $count = $deck->countDeck();
         return $this->render('cards/draw_form.html.twig', ["count" => $count]);
@@ -88,8 +83,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw-many", name: "draw_post", methods: ['POST'])]
     public function drawCallback(
         Request $request
-    ): Response
-    {
+    ): Response {
         $num = $request->request->get("num_cards");
         return $this->redirectToRoute("draw_many", ["num" => $num]);
     }
@@ -98,8 +92,7 @@ class CardGameController extends AbstractController
     public function drawMany(
         int $num,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $data = [
             "draw" => $deck->draw($num),

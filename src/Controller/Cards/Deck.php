@@ -67,7 +67,7 @@ class Deck
     public function groupBySuit(): array
     {
         $allCards = $this->showAll();
-        $grouped = array_reduce($allCards, function($suit, $card) {
+        $grouped = array_reduce($allCards, function ($suit, $card) {
             $prefix = substr($card, 0, -2);
             $suit[$prefix][] = $card;
             return $suit;

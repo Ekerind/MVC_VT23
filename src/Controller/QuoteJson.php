@@ -12,6 +12,7 @@ class QuoteJson extends AbstractController
     #[Route("api/quote", name: "quote")]
     public function jsonQuote(): Response
     {
+        date_default_timezone_set('Europe/Stockholm');
         $number = random_int(0, 2);
         $date = date("Y-m-d H:i:s");
         $quotes = [

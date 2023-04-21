@@ -25,4 +25,10 @@ class TwigRoutingController extends AbstractController
     {
         return $this->render('report.html.twig');
     }
+
+    #[Route("/api", name: "json")]
+    public function jsonIndex(): Response
+    {
+        return $this->render('json.html.twig');
+    }
 }

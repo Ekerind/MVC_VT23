@@ -7,9 +7,11 @@
 
 <p>Det finns {{ count }} kort kvar i kortleken.</p>
 
-{% for card in draw %}
-    <p class="graphics">{{ card|raw }}</p>
-{% endfor %}
+<div class="row">
+    {% for card in draw %}
+        <p class="graphics">{{ card|raw }}</p>
+    {% endfor %}
+</div>
 
 <div>
     <p>
