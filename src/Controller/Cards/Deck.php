@@ -23,10 +23,10 @@ class Deck
         sort($this->deck);
     }
 
-    public function reset(string $cardType = ''): void
+    public function reset(string $cardType = ''): void // Argument 'plain' choses a different set of cards for the deck
     {
         $this->deck = [];
-        $suits = ['s', 'h', 'd', 'c'];
+        $suits = ['s', 'h', 'd', 'c']; //Spades, hearts, diamonds, clubs
 
         if ($cardType == 'plain') {
             foreach ($suits as $suit) {
