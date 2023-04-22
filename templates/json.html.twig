@@ -5,11 +5,11 @@
 {% block body %}
 <h1>JSON api</h1>
 
-<p>.</p>
+<p class="box">Här finns mina samlade länkar för JSON api.</p>
 
 <p>
     {% if app.session.get('deck') is empty %}
-        <a href="{{ path('init') }}">Starta kortspel</a>
+        <p>Du har inget kortspel igång. Klicka på länken för kortspel och välja starta.</p>
     {% else %}
         <a href="{{ path('json_deck') }}">Sorterad kortlek</a> |
         <a href="{{ path('json_shuffle') }}">Blanda kortlek</a> |

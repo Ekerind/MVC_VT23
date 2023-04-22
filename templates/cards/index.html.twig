@@ -5,8 +5,6 @@
 {% block body %}
 <h1>Kortspel</h1>
 
-<p>Förklarande text kommer. Även ett UML-diagram.</p>
-
 <p>
     {% if app.session.get('deck') is empty %}
         <a href="{{ path('init') }}">Starta kortspel</a>
@@ -16,6 +14,23 @@
         <a href="{{ path('draw_single') }}">Dra ett kort</a> |
         <a href="{{ path('draw_get') }}">Dra flera kort</a>
     {% endif %}
+</p>
+
+<hr>
+
+<div class="diagram">
+    <img class="diagram" src="{{ asset('img/kmom02.png') }}" alt="A UML representation of three class diagrams">
+</div>
+<p class="top">
+    Här finns länkarna för mitt kortspel samlat. Jag använder mig av tre klasser: Card, CardGraphic och Deck. Klassen Card är grundklassen som skapar kort-objekt.
+    CardGraphic ärver funktionaliteten från klassen Card men modifierar konstruktorn så korten lagras med en unicode representation. Klassen Deck bygger innehåller
+    objekt av klassen CardGraphic (men skulle också kunnat använda sig av Card). Den innehåller funktioner för att lägga till specifika kort, dra kort, blanda och visa kort.
+    Jag skapade också funktionen reset som fyller objektet med de 52 kort som finns i en kortlek. När användaren väljer att blanda kortleken så återställs den så den innehåller
+    52 kort igen. Inga länkar för att påverka kortleken syns förens användaren väljer att starta spelet.
+</p>
+<p class="bottom">
+    Funktionen groupBySuit ser till att sortera innehållet i objektet baserat på vilken färg de har. Det görs genom att gruppera innehållet som har gemensamt innehåll fram till
+    näst sista positionen, den som säger vilken färg kortet har. Efter det sorterar jag varje färg för sig.
 </p>
 
 {% endblock %}

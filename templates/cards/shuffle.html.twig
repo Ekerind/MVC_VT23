@@ -5,7 +5,7 @@
 {% block body %}
 <h1>Blandad kortlek</h1>
 
-<p>Kortleken har blandats om. Det finns nu {{ count }}st kort i kortleken igen.</p>
+<p class="box">Kortleken har blandats om. Det finns nu {{ count }}st kort i kortleken igen.</p>
 
 <div class="suits">
     {% for batch in deck|batch(10) %}

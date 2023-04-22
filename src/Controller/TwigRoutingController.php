@@ -36,8 +36,7 @@ class TwigRoutingController extends AbstractController
     #[Route("/reset", name: "clear_session")]
     public function clearSession(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
         return $this->render('home.html.twig');
     }

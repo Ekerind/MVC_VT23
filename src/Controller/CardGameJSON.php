@@ -17,8 +17,7 @@ class CardGameJSON extends AbstractController
     #[Route("api/deck", name: "json_deck", methods: ['GET'])]
     public function jsonDeck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $data = [
             "deck" => $deck->groupBySuit(),
@@ -35,8 +34,7 @@ class CardGameJSON extends AbstractController
     #[Route("api/deck/shuffle", name: "json_shuffle")]
     public function jsonShuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $deck->shuffle();
         $session->set("deck", $deck);
@@ -55,8 +53,7 @@ class CardGameJSON extends AbstractController
     #[Route("api/deck/draw", name: "json_draw_single", methods: ['GET', 'POST'])]
     public function jsonDraw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $data = [
             "draw" => $deck->draw(),
@@ -92,8 +89,7 @@ class CardGameJSON extends AbstractController
     public function jsonDrawMany(
         int $num,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $data = [
             "draw" => $deck->draw($num),

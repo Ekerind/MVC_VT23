@@ -1,0 +1,30 @@
+.box {
+    background-color: darken(rgb(204, 204, 204), 20%);
+    width: 60%;
+    font-family: monospace;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.top {
+    background-color: darken(rgb(204, 204, 204), 20%);
+    width: 60%;
+    font-family: monospace;
+    padding: 2rem;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.middle {
+    background-color: darken(rgb(204, 204, 204), 20%);
+    width: 60%;
+    font-family: monospace;
+    padding: 2rem;
+}
+
+.bottom {
+    background-color: darken(rgb(204, 204, 204), 20%);
+    width: 60%;
+    font-family: monospace;
+    padding: 2rem;
+    border-radius: 0px 0px 20px 20px;
+}
